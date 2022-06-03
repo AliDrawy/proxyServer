@@ -1,0 +1,30 @@
+Authored by: Ali Drawy
+ID:211556493
+Exercise name: proxyServer.c + threadpool.c
+submitted files: proxyServer.c ,threadpool.c and README
+
+summary:
+
+I made a proxy server that receives multiple clients and serves them by using threadpool 
+the work of this server is to receive a request from the client and check if the request is correct request 
+if the request is right then the server must send the file that the client need so if the server has the file then
+we will send the file from the local file system else the server should send the request to the server that have the file 
+and then the server should check if the response correct if yes the server will send the response to the client and to the local file system
+
+
+proxyServer.c : contain the server code
+threadpool.c : contain the threadpool code 
+README:the file that contain  the description of the proxyServer and the threadpool 
+the functions :
+1-copy_str: make a copy of string from onther string
+2-read_from_file: send the file that i opened to the client and  saving it  in the local file system
+3-small_letter: change the capital letter to small letter
+4-decToBinary: change the decimal number to binary number
+5-get_mime_type: convert file extension to mime type
+6-error_500: send a request that contain error 500 to the client
+7-function: this function that we put it in the dispatch to take it by the thread and do the work
+
+compiling :
+gcc proxyServer.c threadpool.c -pthread -o proxyServer
+./proxyServer <port> <pool size> <max number of request> <filter>
+
